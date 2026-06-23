@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DSHS SnowTrex Köln - Saison 2025/26</title>
-  <link rel="stylesheet" href="styles.css?v=nav-20260623">
+  <link rel="stylesheet" href="styles.css?v=rubriknav-20260623">
 </head>
 <body>
   <main class="page-shell">
@@ -34,6 +34,11 @@
       <div class="section-heading">
         <p class="eyebrow">Punkteverlauf</p>
         <h2 id="points-title">Kette der Saisonspiele</h2>
+        <nav class="section-nav rubric-nav" aria-label="Weitere Rubriken">
+          <a href="#saisonbilanz">Saisonbilanz</a>
+          <a href="#koelner-mvps">Kölner MVPs</a>
+          <a href="#youtube-aufrufe">YouTube-Aufrufe</a>
+        </nav>
       </div>
       <div id="points-chain" class="points-chain" aria-label="Punktekette nach Spielen"></div>
       <div class="points-legend" aria-label="Legende">
@@ -44,14 +49,29 @@
       </div>
       <div id="saisonbilanz" class="season-stats" aria-label="Saisonstatistik">
         <h3>Saisonbilanz</h3>
+        <nav class="section-nav rubric-nav" aria-label="Weitere Rubriken">
+          <a href="#punkteverlauf">Kette der Saisonspiele</a>
+          <a href="#koelner-mvps">Kölner MVPs</a>
+          <a href="#youtube-aufrufe">YouTube-Aufrufe</a>
+        </nav>
         <div id="season-stats-grid" class="season-stats-grid"></div>
       </div>
       <div id="koelner-mvps" class="koeln-mvps" aria-label="Kölner MVPs">
         <h3>Kölner MVPs</h3>
+        <nav class="section-nav rubric-nav" aria-label="Weitere Rubriken">
+          <a href="#punkteverlauf">Kette der Saisonspiele</a>
+          <a href="#saisonbilanz">Saisonbilanz</a>
+          <a href="#youtube-aufrufe">YouTube-Aufrufe</a>
+        </nav>
         <div id="koeln-mvps-list" class="koeln-mvps-list"></div>
       </div>
       <div id="youtube-aufrufe" class="youtube-stats" aria-label="YouTube Aufrufzahlen">
         <h3>YouTube-Aufrufe</h3>
+        <nav class="section-nav rubric-nav" aria-label="Weitere Rubriken">
+          <a href="#punkteverlauf">Kette der Saisonspiele</a>
+          <a href="#saisonbilanz">Saisonbilanz</a>
+          <a href="#koelner-mvps">Kölner MVPs</a>
+        </nav>
         <p id="youtube-views-date" class="stats-note"></p>
         <div id="youtube-views-list" class="youtube-views-list"></div>
       </div>
@@ -132,7 +152,7 @@
     </article>
   </template>
 
-  <script src="games.js?v=nav-20260623"></script>
-  <script src="app.js?v=nav-20260623"></script>
+  <script src="games.js?v=rubriknav-20260623"></script>
+  <script src="app.js?v=rubriknav-20260623"></script>
 </body>
 </html>

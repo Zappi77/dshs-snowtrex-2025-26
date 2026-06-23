@@ -124,3 +124,24 @@ git push
 ## Hinweise
 
 Die Teamlogos, Bildergalerien, Spielberichte, Statistik-PDFs und YouTube-Videos werden extern verlinkt. Im Repository liegen nur die statischen Seitendateien und die strukturierten Daten.
+
+## Änderungshistorie
+
+### 23.06.2026
+
+- statische Webseite mit 28 Spielkarten erstellt
+- Einzelsatzergebnisse, Ballpunkte, Spielnummern und matchIds ergänzt
+- Tabellenplatz nach jedem Spiel ergänzt
+- Teamlogos und Teamseiten verlinkt
+- MVPs mit Spielerinnenprofilen ergänzt
+- Kurzberichte, Spielberichte, Statistik-PDFs, YouTube-Links und Bildergalerien ergänzt
+- Punkteverlauf als Kreis-Kette ergänzt
+- Saisonbilanz mit Satz-, Ballpunkt- und Punktekennzahlen ergänzt
+- Kölner MVP-Auswertung mit Gold-/Silber-Medaillen ergänzt
+- YouTube-Aufrufzahlen direkt aus YouTube-Watchdaten ausgelesen und ergänzt
+- responsive Darstellung für Smartphone, Tablet und Desktop geprüft
+- öffentliches GitHub-Repository erstellt
+- README mit Veröffentlichungsanleitung ergänzt
+- Header-Sprungnavigation ergänzt
+- Sprungnavigationen unter den Auswertungsrubriken ergänzt
+- CSS- und JavaScript-Dateien per Versionsparameter gegen Browser-Cache abgesichert

@@ -87,6 +87,17 @@ h1 {
   background: #eef5ff;
 }
 
+.rubric-nav {
+  gap: 6px;
+  margin: 10px 0 14px;
+}
+
+.rubric-nav a {
+  min-height: 32px;
+  font-size: 12px;
+  padding: 6px 11px;
+}
+
 .toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -296,7 +307,7 @@ h1 {
 }
 
 .stats-note {
-  margin: -6px 0 12px;
+  margin: 0 0 12px;
   color: var(--muted);
   font-size: 13px;
   font-weight: 800;
