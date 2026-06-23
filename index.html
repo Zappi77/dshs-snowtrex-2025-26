@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DSHS SnowTrex Köln - Saison 2025/26</title>
-  <link rel="stylesheet" href="styles.css?v=header-20260623">
+  <link rel="stylesheet" href="styles.css?v=nav-20260623">
 </head>
 <body>
   <main class="page-shell">
@@ -12,6 +12,12 @@
       <p class="eyebrow header-eyebrow">Sparda 2. Liga Pro · Saison 2025/26</p>
       <h1>DSHS SnowTrex Köln</h1>
       <p class="summary">Alle 28 Saisonspiele als Karten nach der Skizze: Datum, Spielnummer, Logos, Ergebnis, Satzstände, Tabellenplatz, MVPs, tabellarische Daten/Zahlen, YouTube-Links und Aufrufe.</p>
+      <nav class="section-nav" aria-label="Sprungnavigation">
+        <a href="#punkteverlauf">Kette der Saisonspiele</a>
+        <a href="#saisonbilanz">Saisonbilanz</a>
+        <a href="#koelner-mvps">Kölner MVPs</a>
+        <a href="#youtube-aufrufe">YouTube-Aufrufe</a>
+      </nav>
     </header>
 
     <section class="toolbar" aria-label="Filter">
@@ -24,7 +30,7 @@
 
     <section id="cards" class="cards-grid" aria-label="Spielkarten"></section>
 
-    <section class="points-section" aria-labelledby="points-title">
+    <section id="punkteverlauf" class="points-section" aria-labelledby="points-title">
       <div class="section-heading">
         <p class="eyebrow">Punkteverlauf</p>
         <h2 id="points-title">Kette der Saisonspiele</h2>
@@ -36,15 +42,15 @@
         <span><i class="legend-dot points-1"></i>1 Punkt</span>
         <span><i class="legend-dot points-0"></i>0 Punkte</span>
       </div>
-      <div class="season-stats" aria-label="Saisonstatistik">
+      <div id="saisonbilanz" class="season-stats" aria-label="Saisonstatistik">
         <h3>Saisonbilanz</h3>
         <div id="season-stats-grid" class="season-stats-grid"></div>
       </div>
-      <div class="koeln-mvps" aria-label="Kölner MVPs">
+      <div id="koelner-mvps" class="koeln-mvps" aria-label="Kölner MVPs">
         <h3>Kölner MVPs</h3>
         <div id="koeln-mvps-list" class="koeln-mvps-list"></div>
       </div>
-      <div class="youtube-stats" aria-label="YouTube Aufrufzahlen">
+      <div id="youtube-aufrufe" class="youtube-stats" aria-label="YouTube Aufrufzahlen">
         <h3>YouTube-Aufrufe</h3>
         <p id="youtube-views-date" class="stats-note"></p>
         <div id="youtube-views-list" class="youtube-views-list"></div>
@@ -126,7 +132,7 @@
     </article>
   </template>
 
-  <script src="games.js"></script>
-  <script src="app.js"></script>
+  <script src="games.js?v=nav-20260623"></script>
+  <script src="app.js?v=nav-20260623"></script>
 </body>
 </html>

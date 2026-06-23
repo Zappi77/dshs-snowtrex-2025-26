@@ -60,6 +60,33 @@ h1 {
   line-height: 1.5;
 }
 
+.section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.section-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.15;
+  text-decoration: none;
+  padding: 8px 13px;
+}
+
+.section-nav a:hover {
+  border-color: var(--blue);
+  background: #eef5ff;
+}
+
 .toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -712,6 +739,15 @@ h1 {
 
   .links-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section-nav {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .section-nav a {
+    justify-content: center;
   }
 
   .status-row {
