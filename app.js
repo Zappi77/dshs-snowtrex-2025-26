@@ -1,4 +1,4 @@
-const cardsEl = document.querySelector("#cards");
+const cardsEl = document.querySelector("#spielkarten");
 const pointsChainEl = document.querySelector("#points-chain");
 const seasonStatsGridEl = document.querySelector("#season-stats-grid");
 const koelnMvpsListEl = document.querySelector("#koeln-mvps-list");
