@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DSHS SnowTrex Köln - Saison 2025/26</title>
+  <link rel="stylesheet" href="styles.css?v=header-20260623">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="page-header">
+      <p class="eyebrow header-eyebrow">Sparda 2. Liga Pro · Saison 2025/26</p>
+      <h1>DSHS SnowTrex Köln</h1>
+      <p class="summary">Alle 28 Saisonspiele als Karten nach der Skizze: Datum, Spielnummer, Logos, Ergebnis, Satzstände, Tabellenplatz, MVPs, tabellarische Daten/Zahlen, YouTube-Links und Aufrufe.</p>
+    </header>
+
+    <section class="toolbar" aria-label="Filter">
+      <button class="filter-button active" data-filter="all">Alle</button>
+      <button class="filter-button" data-filter="home">Heim</button>
+      <button class="filter-button" data-filter="away">Auswärts</button>
+      <button class="filter-button" data-filter="win">Siege</button>
+      <button class="filter-button" data-filter="loss">Niederlagen</button>
+    </section>
+
+    <section id="cards" class="cards-grid" aria-label="Spielkarten"></section>
+
+    <section class="points-section" aria-labelledby="points-title">
+      <div class="section-heading">
+        <p class="eyebrow">Punkteverlauf</p>
+        <h2 id="points-title">Kette der Saisonspiele</h2>
+      </div>
+      <div id="points-chain" class="points-chain" aria-label="Punktekette nach Spielen"></div>
+      <div class="points-legend" aria-label="Legende">
+        <span><i class="legend-dot points-3"></i>3 Punkte</span>
+        <span><i class="legend-dot points-2"></i>2 Punkte</span>
+        <span><i class="legend-dot points-1"></i>1 Punkt</span>
+        <span><i class="legend-dot points-0"></i>0 Punkte</span>
+      </div>
+      <div class="season-stats" aria-label="Saisonstatistik">
+        <h3>Saisonbilanz</h3>
+        <div id="season-stats-grid" class="season-stats-grid"></div>
+      </div>
+      <div class="koeln-mvps" aria-label="Kölner MVPs">
+        <h3>Kölner MVPs</h3>
+        <div id="koeln-mvps-list" class="koeln-mvps-list"></div>
+      </div>
+      <div class="youtube-stats" aria-label="YouTube Aufrufzahlen">
+        <h3>YouTube-Aufrufe</h3>
+        <p id="youtube-views-date" class="stats-note"></p>
+        <div id="youtube-views-list" class="youtube-views-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <template id="game-card-template">
+    <article class="game-card">
+      <div class="card-topline">
+        <div>
+          <span class="label">Wochentag / Datum</span>
+          <strong class="date"></strong>
+        </div>
+        <div class="right-meta">
+          <span class="label">Spielnummer</span>
+          <strong class="game-number"></strong>
+        </div>
+      </div>
+
+      <div class="teams-row">
+        <div class="team-block">
+          <div class="badge-frame home-badge"></div>
+          <span class="team-name home-name"></span>
+        </div>
+        <div class="score-block">
+          <span class="match-id"></span>
+          <strong class="score"></strong>
+          <span class="ball-points"></span>
+        </div>
+        <div class="team-block">
+          <div class="badge-frame away-badge"></div>
+          <span class="team-name away-name"></span>
+        </div>
+      </div>
+
+      <div class="sets"></div>
+
+      <div class="status-row">
+        <div>
+          <span class="label">Tabellenplatz danach</span>
+          <strong class="rank"></strong>
+        </div>
+        <div>
+          <span class="label">Spieldauer</span>
+          <strong class="duration"></strong>
+        </div>
+        <div>
+          <span class="label">Zuschauer</span>
+          <strong class="spectators"></strong>
+        </div>
+        <div>
+          <span class="label">Ort</span>
+          <strong class="venue"></strong>
+        </div>
+      </div>
+
+      <div class="report-row">
+        <div class="mvp-block">
+          <span class="label">MVPs</span>
+          <div class="mvps"></div>
+        </div>
+        <div class="report-block">
+          <span class="label">Kurzbericht</span>
+          <p class="report-summary"></p>
+        </div>
+      </div>
+
+      <div class="links-row">
+        <a class="card-link detail-link" target="_blank" rel="noreferrer">Spieldetails</a>
+        <a class="card-link stats-link" target="_blank" rel="noreferrer">Spielstatistik</a>
+        <a class="card-link article-link disabled" target="_blank" rel="noreferrer">Artikel</a>
+        <a class="card-link video-link disabled" target="_blank" rel="noreferrer">YouTube Video</a>
+      </div>
+
+      <div class="media-row">
+        <a class="card-link gallery-link" target="_blank" rel="noreferrer">Bildergalerie</a>
+      </div>
+    </article>
+  </template>
+
+  <script src="games.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
