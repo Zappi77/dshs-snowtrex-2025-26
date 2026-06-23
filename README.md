@@ -144,4 +144,5 @@ Die Teamlogos, Bildergalerien, Spielberichte, Statistik-PDFs und YouTube-Videos 
 - README mit Veröffentlichungsanleitung ergänzt
 - Header-Sprungnavigation ergänzt
 - Sprungnavigationen unter den Auswertungsrubriken ergänzt
+- Rücksprung zu den Spielkarten in den Rubriknavigationen ergänzt
 - CSS- und JavaScript-Dateien per Versionsparameter gegen Browser-Cache abgesichert
