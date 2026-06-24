@@ -1,5 +1,6 @@
 const cardsEl = document.querySelector("#spielkarten");
 const pointsChainEl = document.querySelector("#points-chain");
+const rankChartEl = document.querySelector("#rank-chart");
 const seasonStatsGridEl = document.querySelector("#season-stats-grid");
 const koelnMvpsListEl = document.querySelector("#koeln-mvps-list");
 const youtubeViewsDateEl = document.querySelector("#youtube-views-date");
@@ -248,6 +249,128 @@ function renderPointsChain() {
   });
 }
 
+function renderRankChart() {
+  const width = 840;
+  const height = 300;
+  const margin = { top: 24, right: 22, bottom: 48, left: 44 };
+  const innerWidth = width - margin.left - margin.right;
+  const innerHeight = height - margin.top - margin.bottom;
+  const maxRank = Math.max(10, ...games.map((game) => game.rankAfter));
+  const minRank = 1;
+  const xFor = (index) => margin.left + (index / (games.length - 1)) * innerWidth;
+  const yFor = (rank) => margin.top + ((rank - minRank) / (maxRank - minRank)) * innerHeight;
+  const svgNs = "http://www.w3.org/2000/svg";
+  const make = (tag, attrs = {}) => {
+    const node = document.createElementNS(svgNs, tag);
+    Object.entries(attrs).forEach(([key, value]) => node.setAttribute(key, value));
+    return node;
+  };
+
+  rankChartEl.innerHTML = "";
+
+  const svg = make("svg", {
+    viewBox: `0 0 ${width} ${height}`,
+    role: "img",
+    "aria-label": "Tabellenplatz von DSHS SnowTrex Köln nach jedem Spieltag"
+  });
+
+  const title = make("title");
+  title.textContent = "Tabellenverlauf nach Spieltagen";
+  svg.append(title);
+
+  for (let rank = minRank; rank <= maxRank; rank += 1) {
+    const y = yFor(rank);
+    svg.append(make("line", {
+      class: "rank-grid-line",
+      x1: margin.left,
+      y1: y,
+      x2: width - margin.right,
+      y2: y
+    }));
+
+    const label = make("text", {
+      class: "rank-axis-label",
+      x: margin.left - 10,
+      y: y + 4,
+      "text-anchor": "end"
+    });
+    label.textContent = `${rank}.`;
+    svg.append(label);
+  }
+
+  [0, 6, 13, 20, 27].forEach((index) => {
+    const x = xFor(index);
+    svg.append(make("line", {
+      class: "rank-tick-line",
+      x1: x,
+      y1: margin.top,
+      x2: x,
+      y2: height - margin.bottom
+    }));
+
+    const label = make("text", {
+      class: "rank-axis-label",
+      x,
+      y: height - margin.bottom + 24,
+      "text-anchor": "middle"
+    });
+    label.textContent = `${index + 1}`;
+    svg.append(label);
+  });
+
+  const yAxisTitle = make("text", {
+    class: "rank-axis-title",
+    x: 0 - (margin.top + innerHeight / 2),
+    y: 15,
+    transform: "rotate(-90)",
+    "text-anchor": "middle"
+  });
+  yAxisTitle.textContent = "Tabellenplatz";
+  svg.append(yAxisTitle);
+
+  const xAxisTitle = make("text", {
+    class: "rank-axis-title",
+    x: margin.left + innerWidth / 2,
+    y: height - 8,
+    "text-anchor": "middle"
+  });
+  xAxisTitle.textContent = "Spieltag";
+  svg.append(xAxisTitle);
+
+  const points = games.map((game, index) => `${xFor(index)},${yFor(game.rankAfter)}`).join(" ");
+  svg.append(make("polyline", {
+    class: "rank-line",
+    points
+  }));
+
+  games.forEach((game, index) => {
+    const point = make("a", {
+      href: `https://www.volleyball-bundesliga.de/popup/matchSeries/matchDetails.xhtml?matchId=${game.matchId}`,
+      target: "_blank",
+      rel: "noreferrer"
+    });
+    const titleNode = make("title");
+    titleNode.textContent = `Spieltag ${index + 1}, #${game.number}: ${game.rankAfter}. Platz nach ${game.home} ${game.score} ${game.away}`;
+    const circle = make("circle", {
+      class: isKoelnWin(game) ? "rank-point rank-point-win" : "rank-point rank-point-loss",
+      cx: xFor(index),
+      cy: yFor(game.rankAfter),
+      r: 5
+    });
+    point.append(titleNode, circle);
+    svg.append(point);
+  });
+
+  const summary = document.createElement("p");
+  summary.className = "rank-chart-summary";
+  const bestRank = Math.min(...games.map((game) => game.rankAfter));
+  const worstRank = Math.max(...games.map((game) => game.rankAfter));
+  const finalRank = games.at(-1).rankAfter;
+  summary.textContent = `Bester Tabellenplatz: ${bestRank}. Platz · schlechtester Tabellenplatz: ${worstRank}. Platz · Abschluss: ${finalRank}. Platz.`;
+
+  rankChartEl.append(svg, summary);
+}
+
 function formatRatio(own, opponent) {
   if (opponent === 0) return "n/a";
   return (own / opponent).toLocaleString("de-DE", { minimumFractionDigits: 3, maximumFractionDigits: 3 });
@@ -478,6 +601,7 @@ filterButtons.forEach(button => {
 
 renderCards();
 renderPointsChain();
+renderRankChart();
 renderSeasonStats();
 renderKoelnMvps();
 renderYoutubeViews();

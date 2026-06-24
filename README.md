@@ -145,4 +145,5 @@ Die Teamlogos, Bildergalerien, Spielberichte, Statistik-PDFs und YouTube-Videos 
 - Header-Sprungnavigation ergänzt
 - Sprungnavigationen unter den Auswertungsrubriken ergänzt
 - Rücksprung zu den Spielkarten in den Rubriknavigationen ergänzt
+- grafischen Tabellenverlauf nach Spieltagen ergänzt
 - CSS- und JavaScript-Dateien per Versionsparameter gegen Browser-Cache abgesichert
