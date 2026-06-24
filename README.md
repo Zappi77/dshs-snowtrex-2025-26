@@ -9,6 +9,7 @@ Die Seite enthält:
 - Tabellenplatz nach dem jeweiligen Spiel
 - Spielnummern und matchIds
 - Spieldauer, Zuschauer und Spielhalle
+- planmäßige Uhrzeit je Spiel
 - Teamlogos und Links zu Teamseiten
 - MVPs mit Spielerinnenlinks
 - Kurzberichte zu den Spielen
@@ -155,3 +156,4 @@ Die Teamlogos, Bildergalerien, Spielberichte, Statistik-PDFs und YouTube-Videos 
 - Abschlusstabellen inklusive Heim- und Auswärtstabelle ergänzt
 - Trennlinien und Umschaltung für Normal-/Heim-/Auswärtstabelle ergänzt
 - Saisonbilanz um Gesamt-/Heim-/Auswärtsumschaltung erweitert
+- planmäßige Uhrzeiten in den Spielkarten ergänzt

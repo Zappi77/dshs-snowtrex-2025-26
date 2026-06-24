@@ -159,7 +159,7 @@ function renderCards(filter = "all") {
       card.dataset.homeAway = game.home === koeln ? "home" : "away";
       card.dataset.result = won ? "win" : "loss";
 
-      node.querySelector(".date").textContent = `${game.weekday}, ${game.date}`;
+      node.querySelector(".date").textContent = `${game.weekday}, ${game.date} · ${game.time} Uhr`;
       node.querySelector(".game-number").textContent = `#${game.number}`;
       node.querySelector(".match-id").textContent = `matchId ${game.matchId}`;
       renderTeamName(node.querySelector(".home-name"), game.home);
