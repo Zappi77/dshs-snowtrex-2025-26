@@ -14,6 +14,7 @@ Die Seite enthält:
 - Kurzberichte zu den Spielen
 - Links zu Spielbericht, Statistik-PDF, YouTube-Video und Bildergalerie
 - Punkteverlauf als Kreis-Kette
+- Tabellenverlauf und Abschlusstabellen
 - Saisonbilanz
 - Kölner MVP-Auswertung
 - YouTube-Aufrufe mit Stand 23.06.2026
@@ -147,4 +148,5 @@ Die Teamlogos, Bildergalerien, Spielberichte, Statistik-PDFs und YouTube-Videos 
 - Rücksprung zu den Spielkarten in den Rubriknavigationen ergänzt
 - grafischen Tabellenverlauf nach Spieltagen ergänzt
 - x-Achse im Tabellenverlauf auf alle 28 Spieltage erweitert
+- Abschlusstabellen inklusive Heim- und Auswärtstabelle ergänzt
 - CSS- und JavaScript-Dateien per Versionsparameter gegen Browser-Cache abgesichert

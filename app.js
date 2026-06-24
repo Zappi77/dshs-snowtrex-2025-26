@@ -1,6 +1,8 @@
 const cardsEl = document.querySelector("#spielkarten");
 const pointsChainEl = document.querySelector("#points-chain");
 const rankChartEl = document.querySelector("#rank-chart");
+const finalStandingsEl = document.querySelector("#final-standings");
+const standingsSourceEl = document.querySelector("#standings-source");
 const seasonStatsGridEl = document.querySelector("#season-stats-grid");
 const koelnMvpsListEl = document.querySelector("#koeln-mvps-list");
 const youtubeViewsDateEl = document.querySelector("#youtube-views-date");
@@ -372,6 +374,76 @@ function renderRankChart() {
   rankChartEl.append(svg, summary);
 }
 
+function renderFinalStandings() {
+  const tables = [
+    { key: "overall", title: "Gesamttabelle" },
+    { key: "home", title: "Heimtabelle" },
+    { key: "away", title: "Auswärtstabelle" }
+  ];
+
+  standingsSourceEl.textContent = finalStandingsSource;
+  finalStandingsEl.innerHTML = "";
+
+  tables.forEach(({ key, title }) => {
+    const wrap = document.createElement("section");
+    wrap.className = "standings-table-card";
+
+    const heading = document.createElement("h4");
+    heading.textContent = title;
+
+    const scroller = document.createElement("div");
+    scroller.className = "standings-table-scroll";
+
+    const table = document.createElement("table");
+    table.className = "standings-table";
+    table.innerHTML = `
+      <thead>
+        <tr>
+          <th>Pl.</th>
+          <th>Team</th>
+          <th>Sp.</th>
+          <th>S</th>
+          <th>Sätze</th>
+          <th>Bälle</th>
+          <th>Pkt.</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    `;
+
+    const tbody = table.querySelector("tbody");
+    finalStandings[key].forEach((row) => {
+      const tr = document.createElement("tr");
+      if (row.team === koeln) tr.className = "standings-koeln-row";
+
+      const teamCell = document.createElement("td");
+      teamCell.className = "standings-team-cell";
+      renderTeamName(teamCell, row.team);
+
+      [
+        row.rank,
+        teamCell,
+        row.played,
+        row.wins,
+        row.sets,
+        row.balls,
+        row.points
+      ].forEach((value, index) => {
+        const cell = index === 1 ? value : document.createElement("td");
+        if (index !== 1) cell.textContent = value;
+        if (index === 6) cell.className = "standings-points-cell";
+        tr.append(cell);
+      });
+
+      tbody.append(tr);
+    });
+
+    scroller.append(table);
+    wrap.append(heading, scroller);
+    finalStandingsEl.append(wrap);
+  });
+}
+
 function formatRatio(own, opponent) {
   if (opponent === 0) return "n/a";
   return (own / opponent).toLocaleString("de-DE", { minimumFractionDigits: 3, maximumFractionDigits: 3 });
@@ -603,6 +675,7 @@ filterButtons.forEach(button => {
 renderCards();
 renderPointsChain();
 renderRankChart();
+renderFinalStandings();
 renderSeasonStats();
 renderKoelnMvps();
 renderYoutubeViews();

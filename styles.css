@@ -255,8 +255,15 @@ h1 {
   padding-top: 18px;
 }
 
+.standings-section {
+  margin-top: 22px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+
 .season-stats h3,
 .rank-chart-section h3,
+.standings-section h3,
 .koeln-mvps h3,
 .youtube-stats h3 {
   margin: 0 0 14px;
@@ -339,6 +346,85 @@ h1 {
   font-size: 13px;
   font-weight: 800;
   line-height: 1.35;
+}
+
+.standings-tables {
+  display: grid;
+  gap: 14px;
+}
+
+.standings-table-card {
+  min-width: 0;
+}
+
+.standings-table-card h4 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.standings-table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.standings-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.standings-table th,
+.standings-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 9px 10px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.standings-table th {
+  background: #eef3f9;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.standings-table th:nth-child(2),
+.standings-table td:nth-child(2) {
+  min-width: 250px;
+  text-align: left;
+}
+
+.standings-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.standings-team-cell a {
+  color: inherit;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.standings-team-cell a:hover {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.standings-points-cell {
+  color: var(--blue);
+  font-weight: 900;
+}
+
+.standings-koeln-row td {
+  background: #eaf4ff;
+  font-weight: 900;
 }
 
 .season-stats-grid {

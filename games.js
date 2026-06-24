@@ -54,6 +54,62 @@ const teamLogoUrls = {
 
 const youtubeViewsDate = "23.06.2026";
 
+const finalStandingsSource = "VBL-Tabelle, Stand 06.05.2026";
+
+const finalStandings = {
+  overall: [
+    { rank: 1, team: "Rote Raben Vilsbiburg", played: 28, wins: 26, sets: "80:11", balls: "2215:1651", points: 79 },
+    { rank: 2, team: "NawaRo Straubing", played: 28, wins: 24, sets: "76:28", balls: "2439:1973", points: 72 },
+    { rank: 3, team: "VfL Oythe", played: 28, wins: 24, sets: "75:32", balls: "2485:2184", points: 69 },
+    { rank: 4, team: "TV Planegg-Krailling", played: 28, wins: 22, sets: "71:30", balls: "2327:2023", points: 63 },
+    { rank: 5, team: "VCO Dresden", played: 28, wins: 17, sets: "65:45", balls: "2422:2341", points: 52 },
+    { rank: 6, team: "DSHS SnowTrex Köln", played: 28, wins: 15, sets: "56:52", balls: "2357:2400", points: 45 },
+    { rank: 7, team: "BayerVolleys Leverkusen", played: 28, wins: 15, sets: "55:53", balls: "2358:2293", points: 44 },
+    { rank: 8, team: "TV Waldgirmes", played: 28, wins: 14, sets: "54:49", balls: "2258:2248", points: 42 },
+    { rank: 9, team: "ESA Grimma Volleys", played: 28, wins: 13, sets: "49:59", balls: "2282:2309", points: 35 },
+    { rank: 10, team: "Sparkassen Wildcats Stralsund", played: 28, wins: 11, sets: "49:63", balls: "2332:2464", points: 35 },
+    { rank: 11, team: "Eintracht Spontent Düsseldorf", played: 28, wins: 9, sets: "43:67", balls: "2284:2456", points: 27 },
+    { rank: 12, team: "Neuseenland-Volleys Markkleeberg", played: 28, wins: 7, sets: "34:70", balls: "2128:2386", points: 21 },
+    { rank: 13, team: "TV Dingolfing", played: 28, wins: 5, sets: "32:75", balls: "2134:2493", points: 18 },
+    { rank: 14, team: "TV Hörde", played: 28, wins: 4, sets: "26:77", balls: "2067:2405", points: 16 },
+    { rank: 15, team: "BBSC Berlin", played: 28, wins: 4, sets: "24:78", balls: "1968:2430", points: 12 }
+  ],
+  home: [
+    { rank: 1, team: "Rote Raben Vilsbiburg", played: 14, wins: 14, sets: "42:3", balls: "1108:803", points: 42 },
+    { rank: 2, team: "VfL Oythe", played: 14, wins: 13, sets: "41:10", balls: "1229:1000", points: 40 },
+    { rank: 3, team: "NawaRo Straubing", played: 14, wins: 11, sets: "37:15", balls: "1215:1018", points: 35 },
+    { rank: 4, team: "TV Planegg-Krailling", played: 14, wins: 11, sets: "34:15", balls: "1121:975", points: 31 },
+    { rank: 5, team: "VCO Dresden", played: 14, wins: 8, sets: "32:24", balls: "1243:1190", points: 24 },
+    { rank: 6, team: "BayerVolleys Leverkusen", played: 14, wins: 8, sets: "31:26", balls: "1245:1165", points: 24 },
+    { rank: 7, team: "TV Waldgirmes", played: 14, wins: 8, sets: "28:24", balls: "1143:1119", points: 23 },
+    { rank: 8, team: "Sparkassen Wildcats Stralsund", played: 14, wins: 7, sets: "29:28", balls: "1205:1241", points: 21 },
+    { rank: 9, team: "DSHS SnowTrex Köln", played: 14, wins: 7, sets: "27:28", balls: "1162:1199", points: 20 },
+    { rank: 10, team: "ESA Grimma Volleys", played: 14, wins: 7, sets: "27:28", balls: "1201:1165", points: 19 },
+    { rank: 11, team: "Eintracht Spontent Düsseldorf", played: 14, wins: 5, sets: "25:30", balls: "1196:1187", points: 18 },
+    { rank: 12, team: "TV Dingolfing", played: 14, wins: 5, sets: "20:33", balls: "1078:1210", points: 14 },
+    { rank: 13, team: "TV Hörde", played: 14, wins: 4, sets: "17:35", balls: "1093:1199", points: 13 },
+    { rank: 14, team: "Neuseenland-Volleys Markkleeberg", played: 14, wins: 4, sets: "16:34", balls: "1023:1145", points: 11 },
+    { rank: 15, team: "BBSC Berlin", played: 14, wins: 2, sets: "12:38", balls: "983:1195", points: 7 }
+  ],
+  away: [
+    { rank: 1, team: "NawaRo Straubing", played: 14, wins: 13, sets: "39:13", balls: "1224:955", points: 37 },
+    { rank: 2, team: "Rote Raben Vilsbiburg", played: 14, wins: 12, sets: "38:8", balls: "1107:848", points: 37 },
+    { rank: 3, team: "TV Planegg-Krailling", played: 14, wins: 11, sets: "37:15", balls: "1206:1048", points: 32 },
+    { rank: 4, team: "VfL Oythe", played: 14, wins: 11, sets: "34:22", balls: "1256:1184", points: 29 },
+    { rank: 5, team: "VCO Dresden", played: 14, wins: 9, sets: "33:21", balls: "1179:1151", points: 28 },
+    { rank: 6, team: "DSHS SnowTrex Köln", played: 14, wins: 8, sets: "29:24", balls: "1195:1201", points: 25 },
+    { rank: 7, team: "BayerVolleys Leverkusen", played: 14, wins: 7, sets: "24:27", balls: "1113:1128", points: 20 },
+    { rank: 8, team: "TV Waldgirmes", played: 14, wins: 6, sets: "26:25", balls: "1115:1129", points: 19 },
+    { rank: 9, team: "ESA Grimma Volleys", played: 14, wins: 6, sets: "22:31", balls: "1081:1144", points: 16 },
+    { rank: 10, team: "Sparkassen Wildcats Stralsund", played: 14, wins: 4, sets: "20:35", balls: "1127:1223", points: 14 },
+    { rank: 11, team: "Neuseenland-Volleys Markkleeberg", played: 14, wins: 3, sets: "18:36", balls: "1105:1241", points: 10 },
+    { rank: 12, team: "Eintracht Spontent Düsseldorf", played: 14, wins: 4, sets: "18:37", balls: "1088:1269", points: 9 },
+    { rank: 13, team: "BBSC Berlin", played: 14, wins: 2, sets: "12:40", balls: "985:1235", points: 5 },
+    { rank: 14, team: "TV Dingolfing", played: 14, wins: 0, sets: "12:42", balls: "1056:1283", points: 4 },
+    { rank: 15, team: "TV Hörde", played: 14, wins: 0, sets: "9:42", balls: "974:1206", points: 3 }
+  ]
+};
+
 const playerProfileUrls = {
   "Anna-Lena Vogel": "https://www.volleyball-bundesliga.de/popup/teamMember/teamMemberDetails.xhtml?teamId=776308987&userId=44010163",
   "Annelis Lotte Denise Tyws": "https://www.volleyball-bundesliga.de/popup/teamMember/teamMemberDetails.xhtml?teamId=776308853&userId=767172913",
