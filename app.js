@@ -3,6 +3,8 @@ const pointsChainEl = document.querySelector("#points-chain");
 const rankChartEl = document.querySelector("#rank-chart");
 const finalStandingsEl = document.querySelector("#final-standings");
 const standingsSourceEl = document.querySelector("#standings-source");
+const crossTableSourceEl = document.querySelector("#cross-table-source");
+const crossTableEl = document.querySelector("#cross-table");
 const seasonStatsSwitcherEl = document.querySelector("#season-stats-switcher");
 const seasonStatsGridEl = document.querySelector("#season-stats-grid");
 const koelnMvpsListEl = document.querySelector("#koeln-mvps-list");
@@ -485,6 +487,82 @@ function renderFinalStandings() {
   renderTable();
 }
 
+function renderCrossTable() {
+  if (!crossTableEl || typeof crossTable === "undefined") return;
+
+  crossTableSourceEl.innerHTML = "";
+  const sourceLink = document.createElement("a");
+  sourceLink.href = crossTable.sourceUrl;
+  sourceLink.target = "_blank";
+  sourceLink.rel = "noreferrer";
+  sourceLink.textContent = crossTable.source;
+  crossTableSourceEl.append(sourceLink);
+
+  const scroller = document.createElement("div");
+  scroller.className = "cross-table-scroll";
+
+  const table = document.createElement("table");
+  table.className = "cross-table";
+
+  const thead = document.createElement("thead");
+  const headerRow = document.createElement("tr");
+  const corner = document.createElement("th");
+  corner.className = "cross-corner";
+  corner.textContent = "Heim \\ Auswärts";
+  headerRow.append(corner);
+
+  crossTable.teams.forEach((team) => {
+    const th = document.createElement("th");
+    th.className = team === koeln ? "cross-koeln-col" : "";
+    th.scope = "col";
+    th.title = team;
+    const badge = teamBadges[team] || { short: team.slice(0, 3).toUpperCase() };
+    th.textContent = badge.short;
+    headerRow.append(th);
+  });
+  thead.append(headerRow);
+
+  const tbody = document.createElement("tbody");
+  crossTable.rows.forEach((row) => {
+    const tr = document.createElement("tr");
+    if (row.team === koeln) tr.classList.add("cross-koeln-row");
+
+    const teamCell = document.createElement("th");
+    teamCell.scope = "row";
+    teamCell.className = "cross-team-cell";
+    renderTeamName(teamCell, row.team);
+    tr.append(teamCell);
+
+    row.cells.forEach((cell) => {
+      const td = document.createElement("td");
+      td.className = `cross-cell cross-${cell.status}`;
+      if (cell.opponent === koeln) td.classList.add("cross-koeln-col");
+      if (cell.title) td.title = `${cell.title}${cell.date ? `, ${cell.date}` : ""}`;
+
+      if (cell.status === "self") {
+        td.textContent = "–";
+      } else if (cell.matchId) {
+        const link = document.createElement("a");
+        link.href = `https://www.volleyball-bundesliga.de/popup/matchSeries/matchDetails.xhtml?matchId=${cell.matchId}`;
+        link.target = "_blank";
+        link.rel = "noreferrer";
+        link.textContent = cell.value;
+        td.append(link);
+      } else {
+        td.textContent = cell.value;
+      }
+
+      tr.append(td);
+    });
+    tbody.append(tr);
+  });
+
+  table.append(thead, tbody);
+  scroller.append(table);
+  crossTableEl.innerHTML = "";
+  crossTableEl.append(scroller);
+}
+
 function formatRatio(own, opponent) {
   if (opponent === 0) return "n/a";
   return (own / opponent).toLocaleString("de-DE", { minimumFractionDigits: 3, maximumFractionDigits: 3 });
@@ -750,6 +828,7 @@ renderCards();
 renderPointsChain();
 renderRankChart();
 renderFinalStandings();
+renderCrossTable();
 renderSeasonStatsSwitcher();
 renderSeasonStats();
 renderKoelnMvps();

@@ -16,6 +16,7 @@ Die Seite enthält:
 - Links zu Spielbericht, Statistik-PDF, YouTube-Video und Bildergalerie
 - Punkteverlauf als Kreis-Kette
 - Tabellenverlauf und Abschlusstabellen
+- Kreuztabelle
 - Saisonbilanz
 - Kölner MVP-Auswertung
 - YouTube-Aufrufe mit Stand 23.06.2026
@@ -28,6 +29,7 @@ Die Seite besteht nur aus statischen Dateien:
 - `styles.css` - Layout und Responsive Design
 - `app.js` - Rendering, Filter, Sortierung und Berechnungen
 - `games.js` - Spieldaten, Links, Logos, MVPs und YouTube-Aufrufe
+- `cross-table.js` - Kreuztabelle der Liga
 
 Es gibt keinen Build-Schritt und keine Server-Abhängigkeit.
 
@@ -55,13 +57,14 @@ Empfohlen ist eine statische Unterseite auf dem Webspace.
 /dshs-snowtrex-2025-26/
 ```
 
-2. Diese vier Dateien in den Ordner hochladen:
+2. Diese fünf Dateien in den Ordner hochladen:
 
 ```text
 index.html
 styles.css
 app.js
 games.js
+cross-table.js
 ```
 
 3. Danach sollte die Seite erreichbar sein unter:
@@ -157,3 +160,4 @@ Die Teamlogos, Bildergalerien, Spielberichte, Statistik-PDFs und YouTube-Videos 
 - Trennlinien und Umschaltung für Normal-/Heim-/Auswärtstabelle ergänzt
 - Saisonbilanz um Gesamt-/Heim-/Auswärtsumschaltung erweitert
 - planmäßige Uhrzeiten in den Spielkarten ergänzt
+- Kreuztabelle als eigene Rubrik ergänzt
