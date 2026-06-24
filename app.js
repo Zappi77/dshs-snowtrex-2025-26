@@ -3,6 +3,7 @@ const pointsChainEl = document.querySelector("#points-chain");
 const rankChartEl = document.querySelector("#rank-chart");
 const finalStandingsEl = document.querySelector("#final-standings");
 const standingsSourceEl = document.querySelector("#standings-source");
+const seasonStatsSwitcherEl = document.querySelector("#season-stats-switcher");
 const seasonStatsGridEl = document.querySelector("#season-stats-grid");
 const koelnMvpsListEl = document.querySelector("#koeln-mvps-list");
 const youtubeViewsDateEl = document.querySelector("#youtube-views-date");
@@ -489,10 +490,10 @@ function formatRatio(own, opponent) {
   return (own / opponent).toLocaleString("de-DE", { minimumFractionDigits: 3, maximumFractionDigits: 3 });
 }
 
-function seasonStats() {
+function seasonStats(filteredGames = games) {
   const scoreCounts = { "3:0": 0, "3:1": 0, "3:2": 0, "2:3": 0, "1:3": 0, "0:3": 0 };
 
-  return games.reduce((stats, game) => {
+  return filteredGames.reduce((stats, game) => {
     const sets = koelnSets(game);
     const score = `${sets.own}:${sets.opponent}`;
     const ballPoints = koelnBallPoints(game);
@@ -527,10 +528,17 @@ function seasonStats() {
   });
 }
 
-function renderSeasonStats() {
-  const stats = seasonStats();
-  const perGame = (value) => (value / games.length).toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+function renderSeasonStats(filter = "overall") {
+  const filteredGames = games.filter((game) => {
+    if (filter === "home") return game.home === koeln;
+    if (filter === "away") return game.away === koeln;
+    return true;
+  });
+  const stats = seasonStats(filteredGames);
+  const gameCount = filteredGames.length || 1;
+  const perGame = (value) => (value / gameCount).toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   const rows = [
+    ["Spiele", filteredGames.length],
     ["3:0", stats.scoreCounts["3:0"]],
     ["3:1", stats.scoreCounts["3:1"]],
     ["3:2", stats.scoreCounts["3:2"]],
@@ -564,6 +572,32 @@ function renderSeasonStats() {
     item.className = "season-stat";
     item.innerHTML = `<span>${label}</span><strong>${value}</strong>`;
     seasonStatsGridEl.append(item);
+  });
+}
+
+function renderSeasonStatsSwitcher() {
+  const options = [
+    { key: "overall", label: "Gesamt" },
+    { key: "home", label: "Heim" },
+    { key: "away", label: "Auswärts" }
+  ];
+
+  seasonStatsSwitcherEl.innerHTML = "";
+  options.forEach(({ key, label }) => {
+    const button = document.createElement("button");
+    button.className = "season-stats-switch-button";
+    button.type = "button";
+    button.textContent = label;
+    button.setAttribute("aria-pressed", key === "overall" ? "true" : "false");
+    if (key === "overall") button.classList.add("active");
+    button.addEventListener("click", () => {
+      seasonStatsSwitcherEl.querySelectorAll(".season-stats-switch-button").forEach((item) => {
+        item.classList.toggle("active", item === button);
+        item.setAttribute("aria-pressed", item === button ? "true" : "false");
+      });
+      renderSeasonStats(key);
+    });
+    seasonStatsSwitcherEl.append(button);
   });
 }
 
@@ -716,6 +750,7 @@ renderCards();
 renderPointsChain();
 renderRankChart();
 renderFinalStandings();
+renderSeasonStatsSwitcher();
 renderSeasonStats();
 renderKoelnMvps();
 renderYoutubeViews();

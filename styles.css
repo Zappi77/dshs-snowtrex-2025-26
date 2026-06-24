@@ -474,7 +474,8 @@ h1 {
   color: var(--red);
 }
 
-.standings-switcher {
+.standings-switcher,
+.season-stats-switcher {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -482,7 +483,13 @@ h1 {
   margin-top: 12px;
 }
 
-.standings-switch-button {
+.season-stats-switcher {
+  justify-content: flex-start;
+  margin: 0 0 12px;
+}
+
+.standings-switch-button,
+.season-stats-switch-button {
   border: 1px solid var(--line);
   border-radius: 999px;
   background: #fff;
@@ -494,7 +501,8 @@ h1 {
   padding: 7px 12px;
 }
 
-.standings-switch-button.active {
+.standings-switch-button.active,
+.season-stats-switch-button.active {
   border-color: var(--blue);
   background: var(--blue);
   color: #fff;

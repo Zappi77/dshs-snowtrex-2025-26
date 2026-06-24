@@ -143,6 +143,10 @@ Die Teamlogos, Bildergalerien, Spielberichte, Statistik-PDFs und YouTube-Videos 
 - responsive Darstellung für Smartphone, Tablet und Desktop geprüft
 - öffentliches GitHub-Repository erstellt
 - README mit Veröffentlichungsanleitung ergänzt
+- CSS- und JavaScript-Dateien per Versionsparameter gegen Browser-Cache abgesichert
+
+### 24.06.2026
+
 - Header-Sprungnavigation ergänzt
 - Sprungnavigationen unter den Auswertungsrubriken ergänzt
 - Rücksprung zu den Spielkarten in den Rubriknavigationen ergänzt
@@ -150,4 +154,4 @@ Die Teamlogos, Bildergalerien, Spielberichte, Statistik-PDFs und YouTube-Videos 
 - x-Achse im Tabellenverlauf auf alle 28 Spieltage erweitert
 - Abschlusstabellen inklusive Heim- und Auswärtstabelle ergänzt
 - Trennlinien und Umschaltung für Normal-/Heim-/Auswärtstabelle ergänzt
-- CSS- und JavaScript-Dateien per Versionsparameter gegen Browser-Cache abgesichert
+- Saisonbilanz um Gesamt-/Heim-/Auswärtsumschaltung erweitert
