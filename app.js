@@ -298,10 +298,11 @@ function renderRankChart() {
     svg.append(label);
   }
 
-  [0, 6, 13, 20, 27].forEach((index) => {
+  games.forEach((game, index) => {
     const x = xFor(index);
+    const isMajorTick = index === 0 || index === games.length - 1 || (index + 1) % 7 === 0;
     svg.append(make("line", {
-      class: "rank-tick-line",
+      class: isMajorTick ? "rank-tick-line" : "rank-tick-line rank-tick-line-minor",
       x1: x,
       y1: margin.top,
       x2: x,
@@ -309,7 +310,7 @@ function renderRankChart() {
     }));
 
     const label = make("text", {
-      class: "rank-axis-label",
+      class: isMajorTick ? "rank-axis-label" : "rank-axis-label rank-axis-label-minor",
       x,
       y: height - margin.bottom + 24,
       "text-anchor": "middle"

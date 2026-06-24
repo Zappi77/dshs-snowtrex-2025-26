@@ -146,4 +146,5 @@ Die Teamlogos, Bildergalerien, Spielberichte, Statistik-PDFs und YouTube-Videos 
 - Sprungnavigationen unter den Auswertungsrubriken ergänzt
 - Rücksprung zu den Spielkarten in den Rubriknavigationen ergänzt
 - grafischen Tabellenverlauf nach Spieltagen ergänzt
+- x-Achse im Tabellenverlauf auf alle 28 Spieltage erweitert
 - CSS- und JavaScript-Dateien per Versionsparameter gegen Browser-Cache abgesichert
