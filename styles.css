@@ -427,6 +427,79 @@ h1 {
   font-weight: 900;
 }
 
+.standings-after-promotion-row td {
+  border-top: 3px solid var(--green);
+}
+
+.standings-relegation-row td {
+  border-top: 3px solid var(--red);
+}
+
+.standings-relegation-zone-row td {
+  background: #fff7f7;
+}
+
+.standings-koeln-row.standings-relegation-zone-row td,
+.standings-koeln-row td {
+  background: #eaf4ff;
+}
+
+.standings-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.standings-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.standings-line-sample {
+  display: inline-block;
+  width: 28px;
+  border-top: 3px solid currentColor;
+}
+
+.standings-promotion-line {
+  color: var(--green);
+}
+
+.standings-relegation-line {
+  color: var(--red);
+}
+
+.standings-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.standings-switch-button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--blue);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 7px 12px;
+}
+
+.standings-switch-button.active {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #fff;
+}
+
 .season-stats-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

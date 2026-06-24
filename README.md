@@ -149,4 +149,5 @@ Die Teamlogos, Bildergalerien, Spielberichte, Statistik-PDFs und YouTube-Videos 
 - grafischen Tabellenverlauf nach Spieltagen ergänzt
 - x-Achse im Tabellenverlauf auf alle 28 Spieltage erweitert
 - Abschlusstabellen inklusive Heim- und Auswärtstabelle ergänzt
+- Trennlinien und Umschaltung für Normal-/Heim-/Auswärtstabelle ergänzt
 - CSS- und JavaScript-Dateien per Versionsparameter gegen Browser-Cache abgesichert

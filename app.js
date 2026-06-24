@@ -376,45 +376,66 @@ function renderRankChart() {
 
 function renderFinalStandings() {
   const tables = [
-    { key: "overall", title: "Gesamttabelle" },
-    { key: "home", title: "Heimtabelle" },
-    { key: "away", title: "Auswärtstabelle" }
+    { key: "overall", title: "Gesamttabelle", label: "Normal" },
+    { key: "home", title: "Heimtabelle", label: "Heim" },
+    { key: "away", title: "Auswärtstabelle", label: "Auswärts" }
   ];
+  let activeKey = "overall";
 
   standingsSourceEl.textContent = finalStandingsSource;
   finalStandingsEl.innerHTML = "";
 
-  tables.forEach(({ key, title }) => {
-    const wrap = document.createElement("section");
-    wrap.className = "standings-table-card";
+  const wrap = document.createElement("section");
+  wrap.className = "standings-table-card";
 
-    const heading = document.createElement("h4");
-    heading.textContent = title;
+  const heading = document.createElement("h4");
 
-    const scroller = document.createElement("div");
-    scroller.className = "standings-table-scroll";
+  const scroller = document.createElement("div");
+  scroller.className = "standings-table-scroll";
 
-    const table = document.createElement("table");
-    table.className = "standings-table";
-    table.innerHTML = `
-      <thead>
-        <tr>
-          <th>Pl.</th>
-          <th>Team</th>
-          <th>Sp.</th>
-          <th>S</th>
-          <th>Sätze</th>
-          <th>Bälle</th>
-          <th>Pkt.</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    `;
+  const table = document.createElement("table");
+  table.className = "standings-table";
+  table.innerHTML = `
+    <thead>
+      <tr>
+        <th>Pl.</th>
+        <th>Team</th>
+        <th>Sp.</th>
+        <th>S</th>
+        <th>Sätze</th>
+        <th>Bälle</th>
+        <th>Pkt.</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  `;
 
+  const legend = document.createElement("div");
+  legend.className = "standings-legend";
+  legend.innerHTML = `
+    <span><i class="standings-line-sample standings-promotion-line"></i>Aufstiegsplatz</span>
+    <span><i class="standings-line-sample standings-relegation-line"></i>Abstiegsplätze</span>
+  `;
+
+  const switcher = document.createElement("div");
+  switcher.className = "standings-switcher";
+  switcher.setAttribute("aria-label", "Tabellenart");
+
+  const renderTable = () => {
+    const tableConfig = tables.find((item) => item.key === activeKey);
+    heading.textContent = tableConfig.title;
     const tbody = table.querySelector("tbody");
-    finalStandings[key].forEach((row) => {
+    tbody.innerHTML = "";
+
+    finalStandings[activeKey].forEach((row) => {
       const tr = document.createElement("tr");
-      if (row.team === koeln) tr.className = "standings-koeln-row";
+      const rowClasses = [];
+      if (row.rank === 1) rowClasses.push("standings-promotion-row");
+      if (row.rank === 2) rowClasses.push("standings-after-promotion-row");
+      if (row.rank === 13) rowClasses.push("standings-relegation-row");
+      if (row.rank >= 13) rowClasses.push("standings-relegation-zone-row");
+      if (row.team === koeln) rowClasses.push("standings-koeln-row");
+      tr.className = rowClasses.join(" ");
 
       const teamCell = document.createElement("td");
       teamCell.className = "standings-team-cell";
@@ -437,11 +458,30 @@ function renderFinalStandings() {
 
       tbody.append(tr);
     });
+  };
 
-    scroller.append(table);
-    wrap.append(heading, scroller);
-    finalStandingsEl.append(wrap);
+  tables.forEach(({ key, label }) => {
+    const button = document.createElement("button");
+    button.className = "standings-switch-button";
+    button.type = "button";
+    button.textContent = label;
+    button.setAttribute("aria-pressed", key === activeKey ? "true" : "false");
+    button.addEventListener("click", () => {
+      activeKey = key;
+      switcher.querySelectorAll(".standings-switch-button").forEach((item) => {
+        item.classList.toggle("active", item === button);
+        item.setAttribute("aria-pressed", item === button ? "true" : "false");
+      });
+      renderTable();
+    });
+    if (key === activeKey) button.classList.add("active");
+    switcher.append(button);
   });
+
+  scroller.append(table);
+  wrap.append(heading, scroller, legend, switcher);
+  finalStandingsEl.append(wrap);
+  renderTable();
 }
 
 function formatRatio(own, opponent) {
