@@ -191,7 +191,7 @@ function renderCards(filter = "all") {
       });
 
       const detailUrl = `https://www.volleyball-bundesliga.de/popup/matchSeries/matchDetails.xhtml?matchId=${game.matchId}`;
-      const statsUrl = `https://live.volleyball-bundesliga.de/2025-26/Women/${game.number}.pdf`;
+      const statsUrl = game.statsUrl || `https://live.volleyball-bundesliga.de/2025-26/Women/${game.number}.pdf`;
       node.querySelector(".detail-link").href = detailUrl;
       node.querySelector(".stats-link").href = statsUrl;
 
