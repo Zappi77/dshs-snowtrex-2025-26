@@ -161,3 +161,9 @@ Die Teamlogos, Bildergalerien, Spielberichte, Statistik-PDFs und YouTube-Videos 
 - Saisonbilanz um Gesamt-/Heim-/Auswärtsumschaltung erweitert
 - planmäßige Uhrzeiten in den Spielkarten ergänzt
 - Kreuztabelle als eigene Rubrik ergänzt
+
+### 25.06.2026
+
+- externen Linkcheck fuer 156 eindeutige Links durchgeführt
+- defekten Live-Statistik-PDF-Link fuer Spiel #3018 durch funktionierenden offiziellen SAMS-PDF-Link ersetzt
+- Statistik-Link-Rendering um optionale `statsUrl` je Spiel erweitert
