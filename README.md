@@ -91,6 +91,12 @@ Bei sehr langer Seite kann die Hoehe erhoeht werden. Alternativ ist ein normaler
 
 Das Repository kann auch direkt mit GitHub Pages veroeffentlicht werden:
 
+Repository:
+
+```text
+https://github.com/Zappi77/dshs-snowtrex-2025-26
+```
+
 1. GitHub-Repository oeffnen.
 2. `Settings` -> `Pages`.
 3. `Deploy from a branch` auswaehlen.
@@ -130,6 +136,23 @@ git push
 
 Die Teamlogos, Bildergalerien, Spielberichte, Statistik-PDFs und YouTube-Videos werden extern verlinkt. Im Repository liegen nur die statischen Seitendateien und die strukturierten Daten.
 
+## Weitere Saisonseiten
+
+- `bbsc-berlin-2025-26/`
+- `bayervolleys-leverkusen-2025-26/`
+- `eintracht-spontent-duesseldorf-2025-26/`
+- `esa-grimma-volleys-2025-26/`
+- `nawaro-straubing-2025-26/`
+- `neuseenland-volleys-markkleeberg-2025-26/`
+- `rote-raben-vilsbiburg-2025-26/`
+- `sparkassen-wildcats-stralsund-2025-26/`
+- `tv-planegg-krailling-2025-26/`
+- `tv-dingolfing-2025-26/`
+- `tv-waldgirmes-2025-26/`
+- `tv-hoerde-2025-26/`
+- `vco-dresden-2025-26/`
+- `vfl-oythe-2025-26/`
+
 ## Änderungshistorie
 
 ### 23.06.2026
@@ -167,3 +190,14 @@ Die Teamlogos, Bildergalerien, Spielberichte, Statistik-PDFs und YouTube-Videos 
 - externen Linkcheck fuer 156 eindeutige Links durchgeführt
 - defekten Live-Statistik-PDF-Link fuer Spiel #3018 durch funktionierenden offiziellen SAMS-PDF-Link ersetzt
 - Statistik-Link-Rendering um optionale `statsUrl` je Spiel erweitert
+
+### 30.06.2026
+
+- offizielle SAMS-Spielberichte für alle 28 Kölner Saisonspiele separat verlinkt
+- zusätzliche VBL-Live-Spielstatistik nach Spielnummer für alle 28 Spiele ergänzt
+- Live-Statistik für Spiel #3018 wegen HTTP 404 als nicht verfügbar gekennzeichnet; 27 Statistik-PDFs erfolgreich geprüft
+- Linkraster der Spielkarten für fünf Aktionen erweitert
+- alle 97 auf den 28 Spieldetailseiten hinterlegten Vor- und Spielberichte erfasst
+- bisher einzelnen Artikel-Link durch eine eigene Artikelzeile mit zwei bis fünf Titellinks je Spiel ersetzt
+- 26 bislang direkt verlinkte Berichte auf dshs-snowtrex-koeln.de zusätzlich in den Artikelzeilen beibehalten
+- Ursprung aller Artikel anhand der VBL-Autorenangabe ermittelt und mit farbigem Vereinskürzel am Link gekennzeichnet

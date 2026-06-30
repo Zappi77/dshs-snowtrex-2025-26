@@ -52,7 +52,587 @@ const teamLogoUrls = {
   "VCO Dresden": "https://www.volleyball-bundesliga.de/uploads/33ebca47-ee88-4505-80a3-8f625a651bdc/Dresden.png"
 };
 
+const matchArticles = {
+  "3006": [
+    {
+      "title": "Trotz Niederlage hängen die Köpfe nicht",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=778420607"
+    },
+    {
+      "title": "Köln gewinnt klar in Hörde",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=778419067"
+    },
+    {
+      "title": "DSHS SnowTrex Köln reist zum TV Hörde",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=778377188"
+    },
+    {
+      "title": "Das Abenteuer Sparda 2. Liga Pro beginnt!",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=778374013"
+    }
+  ],
+  "3008": [
+    {
+      "title": "Sechspunkte-Wochenende für Köln",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779821588"
+    },
+    {
+      "title": "Jahresausklang in Halle 22",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779775284"
+    }
+  ],
+  "3018": [
+    {
+      "title": "Knapp am Punktgewinn vorbei.",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=778607710"
+    },
+    {
+      "title": "Nervenstark zum Derbysieg",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=778578046"
+    },
+    {
+      "title": "Köln gastiert bei Eintracht Spontent",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=778548365"
+    },
+    {
+      "title": "Zweites Heimspiel für die Eintracht.",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=778545520"
+    }
+  ],
+  "3022": [
+    {
+      "title": "Volleys feiern souveränen Derbyerfolg",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=778688730"
+    },
+    {
+      "title": "Köln unterliegt Leverkusen mit 1:3",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=778671199"
+    },
+    {
+      "title": "Volleys vor Duell mit hohem Reiz",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=778650614"
+    },
+    {
+      "title": "Erstes Heimspiel, großes Derby",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=778627301"
+    }
+  ],
+  "3030": [
+    {
+      "title": "Starker Auftritt, aber ohne Lohn",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=778802129"
+    },
+    {
+      "title": "Harter Kampf mit Happy End für Oythe",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=778781564"
+    },
+    {
+      "title": "Köln trifft auf Tabellennachbarn",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=778759205"
+    },
+    {
+      "title": "Langjähriger Weggefährte zu Gast",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=778708275"
+    }
+  ],
+  "3036": [
+    {
+      "title": "Punkte blieben leider in Köln",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779043837"
+    },
+    {
+      "title": "Köln bezwingt Markkleeberg mit 3:1",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779032852"
+    },
+    {
+      "title": "Premiere in Köln",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=778966159"
+    },
+    {
+      "title": "Die nächste Auswärtsfahrt steht an",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=778946340"
+    }
+  ],
+  "3048": [
+    {
+      "title": "Köln verliert 0:3 in Vilsbiburg",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779291374"
+    },
+    {
+      "title": "Rote Raben behalten ihre weiße Weste",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779276600"
+    },
+    {
+      "title": "Köln reist zum Tabellenführer",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779254375"
+    },
+    {
+      "title": "Raben wollen Heimnimbus behalten",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779245049"
+    }
+  ],
+  "3050": [
+    {
+      "title": "BBSC mit Fortschritten zurückgekehrt",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779387144"
+    },
+    {
+      "title": "Köln bezwingt Berlin mit 3:1",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779374789"
+    },
+    {
+      "title": "BBSC Berlin kommt nach Köln",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779339599"
+    }
+  ],
+  "3060": [
+    {
+      "title": "Der zweite Sieg in Folge",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779503250"
+    },
+    {
+      "title": "Herzschlag-Tiebreak in Stralsund",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779502796"
+    },
+    {
+      "title": "Köln mit Gastspiel bei den Wildcats",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779464053"
+    },
+    {
+      "title": "Spiel Nummer 5 in neun Tagen",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779451502"
+    }
+  ],
+  "3064": [
+    {
+      "title": "Starker Auftakt, bitteres Ende",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779583782"
+    },
+    {
+      "title": "3 Punkte am Nikolausabend",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779577451"
+    },
+    {
+      "title": "Double-Header auswärts!",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779566454"
+    },
+    {
+      "title": "Köln mit Härtetest gegen NawaRo Straubing",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779549660"
+    }
+  ],
+  "3072": [
+    {
+      "title": "Köln ohne Punkte in Planegg",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779727791"
+    },
+    {
+      "title": "Der TVP feiert klares 3:0 gegen Köln",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779696989"
+    },
+    {
+      "title": "Köln zu Gast beim TV Planegg-Krailling",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779669627"
+    },
+    {
+      "title": "Nächstes Heimspiel: TVP empfängt Köln",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779653292"
+    }
+  ],
+  "3078": [
+    {
+      "title": "TVW beendet das Jahr als Tabellenachter",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779814947"
+    },
+    {
+      "title": "Köln vor schwieriger Aufgabe",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779757134"
+    }
+  ],
+  "3085": [
+    {
+      "title": "Köln setzt sich knapp gegen Dingos durch",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779611676"
+    },
+    {
+      "title": "Knappe Niederlage in Köln",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779606381"
+    },
+    {
+      "title": "Unberechenbarkeit beim Duell mit dem TVD",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779561417"
+    },
+    {
+      "title": "Mit Zuversicht nach Köln",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779516460"
+    }
+  ],
+  "3097": [
+    {
+      "title": "Köln startet perfekt in die Rückrunde",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780025405"
+    },
+    {
+      "title": "Kein Neustart für Hörde",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780016050"
+    },
+    {
+      "title": "Die Rückrunde startet",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780011584"
+    },
+    {
+      "title": "Rückrundenauftakt in Köln",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779987072"
+    }
+  ],
+  "3099": [
+    {
+      "title": "Köln krönt Doppelspieltag mit Auswärtssieg",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780112565"
+    },
+    {
+      "title": "ESA VOLLEYS mit leeren Händen im 1. Heimspiel…",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780110636"
+    },
+    {
+      "title": "Köln will Serie ausbauen",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780089558"
+    },
+    {
+      "title": "ESA VOLLEYS wollen zurück in Erfolgsspur",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780086824"
+    }
+  ],
+  "3109": [
+    {
+      "title": "Sechster Sieg in Folge",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780203090"
+    },
+    {
+      "title": "Rheinderby in Halle 22",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780164270"
+    }
+  ],
+  "3113": [
+    {
+      "title": "Volleys setzen gute Tradition im Derby fort",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780311214"
+    },
+    {
+      "title": "Derbyniederlage beendet Kölner Siegesserie",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780304906"
+    },
+    {
+      "title": "Volleys freuen sich auf Highlight",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780263943"
+    },
+    {
+      "title": "Nach dem Derby ist vor dem Derby",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780229448"
+    }
+  ],
+  "3121": [
+    {
+      "title": "Köln verpasst Tie-Break gegen VfL Oythe",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780398861"
+    },
+    {
+      "title": "Oythe kommt als Favorit",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780357182"
+    }
+  ],
+  "3127": [
+    {
+      "title": "Köln holt 3:0 in Markkleeberg",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780486265"
+    },
+    {
+      "title": "Auf Erstligaboden leider keine Heimpunkte",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780476293"
+    },
+    {
+      "title": "Köln reist nach Markkleeberg",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780450251"
+    },
+    {
+      "title": "Heimspiel am Valentinstag",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780444187"
+    }
+  ],
+  "3139": [
+    {
+      "title": "Köln unterliegt dem Spitzenreiter klar",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780573170"
+    },
+    {
+      "title": "Rote Raben lassen nichts anbrennen",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780550930"
+    },
+    {
+      "title": "Köln empfängt Ligaprimus Vilsbiburg",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780537193"
+    }
+  ],
+  "3141": [
+    {
+      "title": "BBSC mit Wochenende ohne Fortune",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780749244"
+    },
+    {
+      "title": "Köln gewinnt umkämpftes Auswärtsspiel",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780747323"
+    },
+    {
+      "title": "Köln trifft auf kämpferischen BBSC Berlin",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780719268"
+    },
+    {
+      "title": "Köln in der Hämmerlinghalle zu Gast",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780692623"
+    }
+  ],
+  "3151": [
+    {
+      "title": "Nur noch ein Punkt",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780926762"
+    },
+    {
+      "title": "Episches Comeback Köln dreht 0:2-Rückstand",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780906722"
+    },
+    {
+      "title": "Köln bereit für die Wildcats aus Stralsund",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780880509"
+    },
+    {
+      "title": "Unveränderte Umstände in Köln",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780880342"
+    },
+    {
+      "title": "Die erste Saison im Pro-Kader: Anna Selle",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780849377"
+    }
+  ],
+  "3155": [
+    {
+      "title": "Satzgewinn beim Tabellenzweiten",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=781020462"
+    },
+    {
+      "title": "NawaRo bezwingt Köln mit 3:1!",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=781007176"
+    },
+    {
+      "title": "Köln gastiert bei NawaRo Straubing",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780987438"
+    },
+    {
+      "title": "NawaRo empfängt Köln!",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780968048"
+    }
+  ],
+  "3163": [
+    {
+      "title": "Köln verliert 1:3 gegen TVP",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=781163185"
+    },
+    {
+      "title": "Köln vs. TVP: Heimspiel mit Revanchechance",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=781124832"
+    }
+  ],
+  "3169": [
+    {
+      "title": "Finale Entscheidung vertagt",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=781298348"
+    },
+    {
+      "title": "Showdown um Platz 6",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=781276636"
+    }
+  ],
+  "3176": [
+    {
+      "title": "Arbeitssieg zum Saisonabschluss",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=781376088"
+    },
+    {
+      "title": "Umkämpftes Saisonfinale",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=781373494"
+    },
+    {
+      "title": "Wiedergutmachung und Platz 6",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=781358982"
+    },
+    {
+      "title": "Saisonfinale mit Heimspiel",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=781324852"
+    }
+  ],
+  "3184": [
+    {
+      "title": "VCO Dresden unterliegt Köln mit 1:3",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780133791"
+    },
+    {
+      "title": "Doppelwechsel brachte die Wende",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780112424"
+    },
+    {
+      "title": "Köln vor schwerer Aufgabe in Dresden",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780084669"
+    },
+    {
+      "title": "VCO Dresden empfängt Köln und BBSC Berlin",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=780081898"
+    }
+  ],
+  "3198": [
+    {
+      "title": "Fünf-Satz-Krimi in Köln",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779399980"
+    },
+    {
+      "title": "VCO Dresden gastiert in Köln",
+      "url": "https://www.volleyball-bundesliga.de/popup/article/fullArticle.xhtml?articleId=779350944"
+    }
+  ]
+};
+
+
+const articleOrigins = {
+  "778374013": "TVH",
+  "778377188": "DSK",
+  "778419067": "DSK",
+  "778420607": "TVH",
+  "778545520": "ESD",
+  "778548365": "DSK",
+  "778578046": "DSK",
+  "778607710": "ESD",
+  "778627301": "DSK",
+  "778650614": "BVL",
+  "778671199": "DSK",
+  "778688730": "BVL",
+  "778708275": "OYT",
+  "778759205": "DSK",
+  "778781564": "OYT",
+  "778802129": "DSK",
+  "778946340": "NVM",
+  "778966159": "DSK",
+  "779032852": "DSK",
+  "779043837": "NVM",
+  "779245049": "RRV",
+  "779254375": "DSK",
+  "779276600": "RRV",
+  "779291374": "DSK",
+  "779339599": "DSK",
+  "779350944": "DSK",
+  "779374789": "DSK",
+  "779387144": "BER",
+  "779399980": "DSK",
+  "779451502": "SWS",
+  "779464053": "DSK",
+  "779502796": "DSK",
+  "779503250": "SWS",
+  "779516460": "TVD",
+  "779549660": "DSK",
+  "779561417": "DSK",
+  "779566454": "STR",
+  "779577451": "STR",
+  "779583782": "DSK",
+  "779606381": "TVD",
+  "779611676": "DSK",
+  "779653292": "TVP",
+  "779669627": "DSK",
+  "779696989": "TVP",
+  "779727791": "DSK",
+  "779757134": "DSK",
+  "779775284": "DSK",
+  "779814947": "TVW",
+  "779821588": "DSK",
+  "779987072": "DSK",
+  "780011584": "TVH",
+  "780016050": "TVH",
+  "780025405": "DSK",
+  "780081898": "VCO",
+  "780084669": "DSK",
+  "780086824": "EGV",
+  "780089558": "DSK",
+  "780110636": "EGV",
+  "780112424": "DSK",
+  "780112565": "DSK",
+  "780133791": "VCO",
+  "780164270": "DSK",
+  "780203090": "DSK",
+  "780229448": "DSK",
+  "780263943": "BVL",
+  "780304906": "DSK",
+  "780311214": "BVL",
+  "780357182": "DSK",
+  "780398861": "DSK",
+  "780444187": "NVM",
+  "780450251": "DSK",
+  "780476293": "NVM",
+  "780486265": "DSK",
+  "780537193": "DSK",
+  "780550930": "RRV",
+  "780573170": "DSK",
+  "780692623": "BER",
+  "780719268": "DSK",
+  "780747323": "DSK",
+  "780749244": "BER",
+  "780849377": "DSK",
+  "780880342": "SWS",
+  "780880509": "DSK",
+  "780906722": "DSK",
+  "780926762": "SWS",
+  "780968048": "STR",
+  "780987438": "DSK",
+  "781007176": "STR",
+  "781020462": "DSK",
+  "781124832": "DSK",
+  "781163185": "DSK",
+  "781276636": "DSK",
+  "781298348": "DSK",
+  "781324852": "TVD",
+  "781358982": "DSK",
+  "781373494": "TVD",
+  "781376088": "DSK"
+};
+
+
 const youtubeViewsDate = "23.06.2026";
+
+const officialReportUrls = {
+  3006: "https://distributor.sams-score.de/scoresheet/pdf/acccc648-535e-4a3b-9815-097492a73c84/3006",
+  3018: "https://distributor.sams-score.de/scoresheet/pdf/600448d6-814e-4936-a245-5248306bd6b0/3018",
+  3022: "https://distributor.sams-score.de/scoresheet/pdf/e1415fb9-0399-4c97-a430-fdf2d7929a60/3022",
+  3030: "https://distributor.sams-score.de/scoresheet/pdf/cbf3a84b-6beb-4635-9a0f-281de27166d2/3030",
+  3036: "https://distributor.sams-score.de/scoresheet/pdf/32fd7619-e73a-4c31-9d29-f96126dc52df/3036",
+  3048: "https://distributor.sams-score.de/scoresheet/pdf/1ca09abb-271b-4b84-b319-f57cb34af190/3048",
+  3050: "https://distributor.sams-score.de/scoresheet/pdf/7925531a-cebc-41f8-b4e2-e020612f8e0f/3050",
+  3198: "https://distributor.sams-score.de/scoresheet/pdf/abf1bd5b-bd2e-4d08-9f5c-b24bd7b87959/3198",
+  3060: "https://distributor.sams-score.de/scoresheet/pdf/a43576d7-c8c4-4d63-a9ac-7023ecee358f/3060",
+  3064: "https://distributor.sams-score.de/scoresheet/pdf/e11666bf-cbcc-48ac-aa7f-2c24bbe73f41/3064",
+  3085: "https://distributor.sams-score.de/scoresheet/pdf/3f44ff7f-4dd7-42b4-a720-dbdba86daae5/3085",
+  3072: "https://distributor.sams-score.de/scoresheet/pdf/1e3a2f14-9147-49e3-b906-df9795e98f91/3072",
+  3078: "https://distributor.sams-score.de/scoresheet/pdf/ee8dca3a-c0fd-4814-824b-b3df8999c4af/3078",
+  3008: "https://distributor.sams-score.de/scoresheet/pdf/47ac148f-c13e-48b9-9e42-2d0156b8fa06/3008",
+  3097: "https://distributor.sams-score.de/scoresheet/pdf/05e8e175-1384-4826-9c64-81ea7e9571a3/3097",
+  3184: "https://distributor.sams-score.de/scoresheet/pdf/2c28bcd9-a5b2-4ddb-a491-7b5ebbf57bf5/3184",
+  3099: "https://distributor.sams-score.de/scoresheet/pdf/42a28a15-03cc-4b62-8c93-c9a230196f49/3099",
+  3109: "https://distributor.sams-score.de/scoresheet/pdf/1c768949-b202-4b06-b2ca-75c6b4365065/3109",
+  3113: "https://distributor.sams-score.de/scoresheet/pdf/8e49e6e0-38c5-47dd-9944-c37657a0e82a/3113",
+  3121: "https://distributor.sams-score.de/scoresheet/pdf/56f9af7a-3ef3-444d-8389-7b84a5b90442/3121",
+  3127: "https://distributor.sams-score.de/scoresheet/pdf/cb31d241-b953-437c-979e-388756de58e1/3127",
+  3139: "https://distributor.sams-score.de/scoresheet/pdf/edfe6e05-5702-4900-a8b0-715330464e85/3139",
+  3141: "https://distributor.sams-score.de/scoresheet/pdf/d561779f-9727-4582-804b-f60b7628d222/3141",
+  3151: "https://distributor.sams-score.de/scoresheet/pdf/2314bf2e-2813-4918-967b-f0b13a9386ce/3151",
+  3155: "https://distributor.sams-score.de/scoresheet/pdf/11189648-76bd-47f0-85f4-a1af1430bccd/3155",
+  3163: "https://distributor.sams-score.de/scoresheet/pdf/688d44e7-0617-4e18-8224-dca200caa171/3163",
+  3169: "https://distributor.sams-score.de/scoresheet/pdf/f4e2d2a7-3191-4739-9e7d-26ae9407137d/3169",
+  3176: "https://distributor.sams-score.de/scoresheet/pdf/52a3f623-1522-479f-958b-4b92dd4a2d25/3176"
+};
 
 const finalStandingsSource = "VBL-Tabelle, Stand 06.05.2026";
 

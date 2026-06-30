@@ -191,15 +191,51 @@ function renderCards(filter = "all") {
       });
 
       const detailUrl = `https://www.volleyball-bundesliga.de/popup/matchSeries/matchDetails.xhtml?matchId=${game.matchId}`;
-      const statsUrl = game.statsUrl || `https://live.volleyball-bundesliga.de/2025-26/Women/${game.number}.pdf`;
+      const officialReportUrl = officialReportUrls[game.number] || game.statsUrl;
+      const statsUrl = `https://live.volleyball-bundesliga.de/2025-26/Women/${game.number}.pdf`;
       node.querySelector(".detail-link").href = detailUrl;
-      node.querySelector(".stats-link").href = statsUrl;
-
-      const articleLink = node.querySelector(".article-link");
-      if (game.articleUrl) {
-        articleLink.href = game.articleUrl;
-        articleLink.classList.remove("disabled");
+      node.querySelector(".official-report-link").href = officialReportUrl;
+      const statsLink = node.querySelector(".stats-link");
+      if (game.number === 3018) {
+        statsLink.removeAttribute("href");
+        statsLink.classList.add("disabled");
+        statsLink.textContent = "Spielstatistik nicht verfügbar";
+      } else {
+        statsLink.href = statsUrl;
       }
+
+      const articleLinks = node.querySelector(".article-links");
+      const articles = [...(matchArticles[game.number] || [])];
+      if (game.articleUrl && !articles.some((article) => article.url === game.articleUrl)) {
+        articles.push({
+          title: "Bericht auf dshs-snowtrex-koeln.de",
+          url: game.articleUrl,
+          origin: "DSK"
+        });
+      }
+      articles.forEach((article) => {
+        const link = document.createElement("a");
+        const articleId = article.url.match(/articleId=(\d+)/)?.[1];
+        const originCode = article.origin || articleOrigins[articleId] || "DSK";
+        const originBadge = Object.values(teamBadges).find((badge) => badge.short === originCode);
+        const origin = document.createElement("span");
+        const title = document.createElement("span");
+        link.className = "article-chip";
+        link.href = article.url;
+        link.target = "_blank";
+        link.rel = "noreferrer";
+        link.setAttribute("aria-label", `${originCode}: ${article.title}`);
+        origin.className = "article-origin";
+        origin.textContent = originCode;
+        if (originBadge) {
+          origin.style.backgroundColor = originBadge.color;
+          origin.style.color = originBadge.text;
+        }
+        title.className = "article-title";
+        title.textContent = article.title;
+        link.append(origin, title);
+        articleLinks.append(link);
+      });
 
       const videoLink = node.querySelector(".video-link");
       if (game.videoUrl) {
