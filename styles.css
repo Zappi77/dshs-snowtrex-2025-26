@@ -1118,10 +1118,49 @@ h1 {
   color: #7c8798;
 }
 
+.site-footer {
+  display: flex;
+  width: min(100% - 40px, 1180px);
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  margin: 18px auto 0;
+  padding: 20px 0 28px;
+  font-size: 13px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer nav {
+  display: flex;
+  gap: 18px;
+}
+
+.site-footer a {
+  color: var(--blue-dark);
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 520px) {
   .page-shell {
     width: min(100% - 20px, 1180px);
     padding-top: 24px;
+  }
+
+  .site-footer {
+    width: calc(100% - 20px);
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .cards-grid {

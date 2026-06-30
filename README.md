@@ -201,3 +201,4 @@ Die Teamlogos, Bildergalerien, Spielberichte, Statistik-PDFs und YouTube-Videos 
 - bisher einzelnen Artikel-Link durch eine eigene Artikelzeile mit zwei bis fünf Titellinks je Spiel ersetzt
 - 26 bislang direkt verlinkte Berichte auf dshs-snowtrex-koeln.de zusätzlich in den Artikelzeilen beibehalten
 - Ursprung aller Artikel anhand der VBL-Autorenangabe ermittelt und mit farbigem Vereinskürzel am Link gekennzeichnet
+- Footer mit Copyright sowie Links zum bestehenden Impressum und Datenschutz auf knud-zabrocki.de ergänzt
